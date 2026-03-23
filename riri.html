@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Card Acessível</title>
+<style>
+/*
+========================================
+ESTILOS DO CARD
+Aprendizados:
+- Hierarquia visual: tamanhos e cores diferentes para cada elemento
+- Contraste: texto escuro em fundo claro
+- Responsividade: card se adapta a telas pequenas
+========================================
+*/
+/* Reset básico e centralização */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+}
+/* CARD PRINCIPAL */
+.card {
+background: white;
+border-radius: 20px;
+padding: 30px;
+width: 100%;
+max-width: 320px;
+text-align: center;
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Efeito hover suave - usando transform (performático!) */
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+/* FOTO DE PERFIL */
+.foto-perfil {
+width: 120px;
+height: 120px;
+border-radius: 50%;
+object-fit: cover;
+border: 4px solid #667eea;
+margin-bottom: 20px;
+}
+/* NOME - hierarquia visual: maior e em negrito */
+.nome {
+font-size: 24px;
+font-weight: bold;
+color: #333;
+margin-bottom: 8px;
+}
+/* PROFISSÃO - hierarquia visual: menor e mais claro */
+.profissao {
+font-size: 16px;
+color: #666;
+margin-bottom: 20px;
+}
+/* DESCRIÇÃO */
+.descricao {
+font-size: 14px;
+color: #888;
+margin-bottom: 25px;
+line-height: 1.5;
+}
+/* ÍCONE SVG */
+.icone-container {
+margin-bottom: 20px;
+}
+.icone {
+width: 40px;
+height: 40px;
+fill: #667eea;
+}
+/* BOTÃO */
+.botao {
+background: #667eea;
+color: white;
+border: none;
+padding: 12px 24px;
+border-radius: 10px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+transition: background 0.3s ease;
+width: 100%;
+}
+/* Efeito hover no botão - usando apenas background (performático!) */
+.botao:hover {
+background: #5a67d8;
+}
+/* Efeito ao clicar */
+.botao:active {
+transform: scale(0.98);
+}
+/* FOCO para acessibilidade por teclado */
+.botao:focus {
+outline: 3px solid #ffd700;
+outline-offset: 2px;
+}
+/* Responsividade para telas pequenas */
+@media (max-width: 480px) {
+.card {
+padding: 20px;
+max-width: 280px;
+}
+.nome {
+font-size: 20px;
+}
+.botao {
+padding: 10px 20px;
+font-size: 14px;
+}
+}
+</style>
+</head>
+<body>
+<div class="card">
+<!--
+FOTO DE PERFIL
+IMPORTANTE: Substitua "sua-foto.jpg" pelo caminho da sua foto otimizada
+Dica: Use imagens do Unsplash ou sua própria foto
+-->
+<img class="foto-perfil"
+ src="perfil.webp"
+ alt="Foto de perfil do desenvolvedor Otávio">
+<!-- NOME - Substitua pelo seu nome -->
+<h1 class="nome">[Rianne Almeida]</h1>
+<!-- PROFISSÃO - Substitua pela sua profissão/área -->
+<p class="profissao">Desenvolvedor(a) Front-End</p>
+<!-- DESCRIÇÃO - Escreva uma breve apresentação -->
+<p class="descricao">
+💻 Apaixonada por tecnologia e design acessível.
+Criando experiências digitais que funcionam para todos.
+</p>
+<!--
+ÍCONE SVG
+IMPORTANTE: Substitua pelo seu ícone SVG otimizado
+Dica: Use https://feathericons.com para baixar ícones SVG grátis
+-->
+<div class="icone-container">
+  <svg class="icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+    <line x1="8" y1="21" x2="16" y2="21"></line>
+    <line x1="12" y1="17" x2="12" y2="21"></line>
+  </svg>
+</div>
+<!-- BOTÃO DE AÇÃO -->
+<button class="botao" onclick="window.open(https://github.com/rianne575)">
+📧 Entrar em contato
+</button>
+</div>
+<script>
+// JavaScript simples para mostrar interatividade
+// Isso é opcional e não afeta a performance principal
+console.log("✅ Card carregado com sucesso!");
+console.log("💡 Dica: Abra o Lighthouse (F12) para ver as notas de performance e
+acessibilidade!");
+// Exemplo de como adicionar mais interatividade (opcional)
+const botao = document.querySelector('.botao');
+if (botao) {
+botao.addEventListener('click', function() {
+// Feedback visual adicional (opcional)
+console.log("🔘 Botão clicado!");
+});
+}
+</script>
+</body>
+</html>
